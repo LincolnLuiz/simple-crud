@@ -1,0 +1,18 @@
+[
+    {
+        "title": "arc-backend",
+        "rootPath": "src/main/java/",
+        "variables": [
+            "entidade"
+        ],
+        "template": [
+            {
+                "path": "../resources/templates/",
+                "dest": "model",
+                "suffixName": ".java",
+                "templateName": "entidade.vm"
+            }
+        ]
+
+    }
+]
