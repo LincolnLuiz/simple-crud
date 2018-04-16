@@ -7,11 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.shell.jline.PromptProvider;
 
+import com.github.lincolnluiz.simplecrud_maven_plugin.setup.Setup;
+
 @SpringBootApplication
 public class Application {
 	
 	public static void main(String... args) {
 		SpringApplication.run(Application.class, "");
+		Setup.process(args[0]);
 	}
 	
 	@Bean

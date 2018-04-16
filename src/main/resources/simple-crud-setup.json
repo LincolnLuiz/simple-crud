@@ -2,15 +2,33 @@
     {
         "title": "api-backend",
         "rootPath": "src/main/java/",
-        "variables": [
-            "entidade"
-        ],
-        "template": [
+        "templates": [
             {
-                "path": "../resources/templates/",
+                "filePath": "../resources/templates/entidade.vm",
                 "dest": "model",
-                "suffixName": ".java",
-                "templateName": "entidade.vm"
+                "suffixName": ".java"
+            },
+            {
+                "filePath": "../resources/templates/entidadeDTO.vm",
+                "dest": "model",
+                "suffixName": "Mais{entity}DTO.java"
+            }
+        ]
+
+    },
+    {
+        "title": "api-frontend",
+        "rootPath": "frontend/app/src/",
+        "templates": [
+            {
+                "filePath": "../resources/templates/list.vm",
+                "dest": "components/{entity}",
+                "suffixName": "{entity.lower}-list.js"
+            },
+            {
+                "filePath": "../resources/templates/entidadeDTO.vm",
+                "dest": "model",
+                "suffixName": "Mais{entity}DTO.java"
             }
         ]
 

@@ -7,7 +7,7 @@ public class Group {
 	public String title;
 	public String rootPath;
 	public List<String> variables;
-	public List<Template> template;
+	public List<Template> templates;
 	
 	@Override
 	public String toString() {
