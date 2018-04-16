@@ -46,5 +46,10 @@ public class Setup {
 	public static Optional<List<Group>> getGroups() {
 		return Setup.groups;
 	}
+	
+	public static Optional<Group> getGroup(String groupTitle) {
+		List<Group> groups = Setup.groups.orElseThrow(RuntimeException::new);
+		return groups.stream().filter(group -> groupTitle.equalsIgnoreCase(group.title)).findAny();
+	}
 
 }
