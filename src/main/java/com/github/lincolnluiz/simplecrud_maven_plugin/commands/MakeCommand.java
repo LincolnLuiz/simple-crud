@@ -6,9 +6,9 @@ import org.springframework.shell.standard.ShellMethod;
 @ShellComponent
 public class MakeCommand {
 
-	@ShellMethod("Add two integers together.")
-	public int add(int a, int b) {
-		return a + b;
+	@ShellMethod("Make file(s) based a group.")
+	public void make(String group, String entity) {
+		
 	}
 
 }

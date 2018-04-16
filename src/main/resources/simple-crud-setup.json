@@ -1,6 +1,6 @@
 [
     {
-        "title": "arc-backend",
+        "title": "api-backend",
         "rootPath": "src/main/java/",
         "variables": [
             "entidade"

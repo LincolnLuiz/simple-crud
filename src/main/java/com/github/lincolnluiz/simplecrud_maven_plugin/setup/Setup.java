@@ -12,13 +12,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Setup {
 
-	public List<Group> groups;
+	public static List<Group> groups;
 	
-	public Setup(List<Group> groups) {
-		this.groups = groups;
+	public Setup(List<Group> pgroups) {
+		groups = pgroups;
 	}
 	
-	public static Setup get(String setupFile) {
+	public static Setup get(String setupFile) throws JsonParseException, JsonMappingException, IOException {
 		String path = System.getProperty("user.dir");
 		
 		File file = new File(path + "\\" + setupFile);
@@ -26,16 +26,7 @@ public class Setup {
 		
 		List<Group> group = new ArrayList<Group>();
 		
-		try {
-			group = mapper.readValue(file, new TypeReference<List<Group>>() {});
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+		group = mapper.readValue(file, new TypeReference<List<Group>>() {});
 		return new Setup(group);		
 	}
 	

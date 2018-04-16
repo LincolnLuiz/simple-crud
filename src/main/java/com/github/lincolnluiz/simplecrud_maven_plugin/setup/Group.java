@@ -9,4 +9,9 @@ public class Group {
 	public List<String> variables;
 	public List<Template> template;
 	
+	@Override
+	public String toString() {
+		return title;
+	}
+	
 }
