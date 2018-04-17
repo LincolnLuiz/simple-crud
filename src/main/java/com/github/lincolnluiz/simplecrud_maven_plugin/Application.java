@@ -13,7 +13,7 @@ import com.github.lincolnluiz.simplecrud_maven_plugin.setup.Setup;
 public class Application {
 	
 	public static void main(String... args) {
-		Setup.process(args[0]);
+		Setup.process(args.length > 0 ? args[0] : "");
 		SpringApplication.run(Application.class, "");
 	}
 	

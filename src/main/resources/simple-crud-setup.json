@@ -11,7 +11,7 @@
             {
                 "filePath": "../resources/templates/entidadeDTO.vm",
                 "dest": "model",
-                "suffixName": "Mais{entity}DTO.java"
+                "suffixName": "DTO.java"
             }
         ]
 

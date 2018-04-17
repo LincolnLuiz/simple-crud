@@ -10,6 +10,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.lincolnluiz.simplecrud_maven_plugin.util.FileUtil;
 
 public class Setup {
 
@@ -21,7 +22,7 @@ public class Setup {
 
 	public static Setup process(String setupFile) {
 		String path = System.getProperty("user.dir");
-		setupFile = path + "\\" + setupFile;
+		setupFile = path + FileUtil.SEPARATOR + setupFile;
 
 		File file = new File(setupFile);
 		ObjectMapper mapper = new ObjectMapper();
