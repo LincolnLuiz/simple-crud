@@ -21,8 +21,9 @@ public class Setup {
 
 	public static Setup process(String setupFile) {
 		String path = System.getProperty("user.dir");
+		setupFile = path + "\\" + setupFile;
 
-		File file = new File(path + "\\" + setupFile);
+		File file = new File(setupFile);
 		ObjectMapper mapper = new ObjectMapper();
 
 		List<Group> group = new ArrayList<Group>();
