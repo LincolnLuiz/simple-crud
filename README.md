@@ -10,12 +10,12 @@ Run the command:
 make --group API-BACKEND --entity Product
 ```
 
-##Get started
+## Get started
 
-#####Maven
+##### sMaven
 
 ```
-<build>
+<build>s
     <plugins>
         <plugin>
             <groupId>com.github.lincolnluiz</groupId>
