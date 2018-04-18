@@ -28,9 +28,9 @@ public class GroupCommand {
 		
 		group.templates.forEach(template -> {
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-			System.out.println("Template Path: " + template.filePath);
+			System.out.println("Template Path: " + template.templatePath);
 			System.out.println("Dest: " + template.dest);
-			System.out.println("Suffix Name: " + template.suffixName);
+			System.out.println("Suffix Name: " + template.finalName);
 		});
 	}
 	

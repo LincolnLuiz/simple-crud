@@ -20,12 +20,11 @@ This file can saved in your project, he define your groups and templates, below 
    {
       "title":"api-backend",
       "rootPath":"src/main/java/",
-      "template":[
+      "templates":[
          {
-            "path":"../resources/templates/",
-            "dest":"model",
-            "suffixName":".java",
-            "templateName":"entidade.vm"
+            "templatePath":"../resources/templates/entidade.vm",
+            "dest":"model/{{entity.lower}}/",
+            "finalName":"{{entity}}.java"
          }
       ]
    }

@@ -39,7 +39,7 @@ public class MakeCommand {
 
 		group.templates.forEach(template -> {
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-			System.out.println(String.format("Processing template file %s", template.filePath));
+			System.out.println(String.format("Processing template file %s", template.templatePath));
 
 			processFileTamplate(entity, template, group);
 		});
@@ -48,14 +48,14 @@ public class MakeCommand {
 	}
 
 	private void processFileTamplate(String entity, Template template, Group group) {
-		Path templatePath = Paths.get(FileUtil.getPathWithSlashEnds(group.rootPath) + template.filePath);
+		Path templatePath = Paths.get(FileUtil.getPathWithSlashEnds(group.rootPath) + template.templatePath);
 
 		String contentParsed = processTEmplateWithEntity(templatePath, entity);
 
-		String fileName = entity + template.suffixName;
+		String fileName = replaceAll(template.finalName, entity);
 
 		Path destinationPath = Paths
-				.get(FileUtil.getPathWithSlashEnds(group.rootPath) + FileUtil.getPathWithSlashEnds(template.dest));
+				.get(FileUtil.getPathWithSlashEnds(group.rootPath) + replaceAll(FileUtil.getPathWithSlashEnds(template.dest), entity));
 
 		if (!createFile(destinationPath, fileName, contentParsed))
 			return;
@@ -98,10 +98,10 @@ public class MakeCommand {
 	
 	private String replaceAll(String originalContent, String entity) {
 		String content = originalContent;
-		content = content.replaceAll("{entity}", entity);
-		content = content.replaceAll("{entity.lower}", entity.toLowerCase());
-		content = content.replaceAll("{entity.upper}", entity.toUpperCase());
-		content = content.replaceAll("{entity.lowerFirst}", StringUtil.toLowerFirst(entity));
+		content = content.replace("{{entity}}", entity);
+		content = content.replace("{{entity.lower}}", entity.toLowerCase());
+		content = content.replace("{{entity.upper}}", entity.toUpperCase());
+		content = content.replace("{{entity.lowerFirst}}", StringUtil.toLowerFirst(entity));
 		
 		return content;
 	}
