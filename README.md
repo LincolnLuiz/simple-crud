@@ -12,7 +12,7 @@ make --group API-BACKEND --entity Product
 
 ## Get started
 
-##### sMaven
+##### Maven
 
 ```
 <build>s
