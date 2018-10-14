@@ -15,12 +15,16 @@ make --group API-BACKEND --entity Product
 ##### Maven
 
 ```
-<build>s
+mvn install:install-file -DgroupId=com.github.lincolnluiz -DartifactId=simplecrud-maven-plugin -Dversion=1.0.0 -Dpackaging=maven-plugin -Dfile=simplecrud-maven-plugin-1.0.0.jar
+```
+
+```
+<build>
     <plugins>
         <plugin>
             <groupId>com.github.lincolnluiz</groupId>
             <artifactId>simplecrud-maven-plugin</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
             <configuration>
             	<setupFile>src/main/resources/simple-crud-setup.json</setupFile>
             </configuration>
