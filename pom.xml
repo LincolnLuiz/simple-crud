@@ -8,7 +8,7 @@
 	<packaging>maven-plugin</packaging>
 
 	<name>Maven SimpleCrud Plugin Maven Plugin</name>
-	<description>A maven plugin to generate file a template</description>
+	<description>A maven plugin to generate file by template</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
